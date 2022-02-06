@@ -11,7 +11,8 @@ contents_split = file_contents.split('.')
 
 a_file.close()
 # contents_split = all_foresights.split('.')
-users_list = ['@pasha1561', '@ira_hrdv']
+users_list = {"@pasha1561" : 915489577, "@ira_hrdv" : 9191991919191991919191919}
+# users_list = ['@pasha1561', '@ira_hrdv']
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
 dispatcher = updater.dispatcher
@@ -41,9 +42,9 @@ a = 9191991919191991919191919
 
 
 def daily_suggestion(context: CallbackContext):
-    # for user in users_list:
-    message = random.choice(contents_split).strip()
-    context.bot.send_message(chat_id=a, text=message)
+    for user in users_list.values():
+        message = random.choice(contents_split).strip()
+        context.bot.send_message(chat_id=user, text=message)
 
 
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6, 7), time=datetime.time(hour=12, minute=27, second=00)) # -2 hours
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6, 7), time=datetime.time(hour=13, minute=38, second=00)) # -2 hours
