@@ -44,4 +44,4 @@ def daily_suggestion(context: CallbackContext):
         context.bot.send_message(chat_id=user, text=message)
 
 
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=2, minute=25, second=00))
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=10, minute=00, second=00))
