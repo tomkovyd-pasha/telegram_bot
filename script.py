@@ -11,7 +11,7 @@ contents_split = file_contents.split('.')
 
 a_file.close()
 # contents_split = all_foresights.split('.')
-users_list = {"@pasha1561" : 915489577}
+users_list = {"@pasha1561" : '915489577'}
 # users_list = ['@pasha1561', '@ira_hrdv']
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
