@@ -38,10 +38,10 @@ echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
 dispatcher.add_handler(echo_handler)
 
 
-# def daily_suggestion(context: CallbackContext):
-#     for user in users_list:
-#         message = random.choice(contents_split).strip()
-#         context.bot.send_message(chat_id=user, text=message)
-#
-#
-# job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=19, minute=31, second=00))
+def daily_suggestion(context: CallbackContext):
+    for user in users_list:
+        message = random.choice(contents_split).strip()
+        context.bot.send_message(chat_id=user, text=message)
+
+
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=2, minute=25, second=00))
