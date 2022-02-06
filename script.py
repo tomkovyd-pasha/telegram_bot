@@ -33,7 +33,7 @@ updater.start_polling()
 
 def echo(update, context):
     #for user in users_list:
-    context.bot.send_message(chat_id=update.effective_chat.id, text=datetime.datetime.now()) #update.message.text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=str(datetime.datetime.now())) #update.message.text)
 
 
 echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
