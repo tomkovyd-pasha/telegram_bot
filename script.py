@@ -1,8 +1,7 @@
-from pytz import unicode
+
 from telegram.ext import Updater, CommandHandler, Filters, MessageHandler, CallbackContext
 import logging
 import random
-# import redis
 import datetime
 
 
@@ -21,32 +20,30 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 j = updater.job_queue
 
 
-# def start(update, context):
-#     message = random.choice(contents_split).strip()
-#     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+def start(update, context):
+    message = random.choice(contents_split).strip()
+    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
-# start_handler = CommandHandler('start', start)
-# dispatcher.add_handler(start_handler)
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
 updater.start_polling()
 
 
 def echo(update, context):
-    # for user in users_list:
-    context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)  # str(datetime.datetime.now())) #update.message.text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=str(update.effective_chat.id) + str(datetime.datetime.now()))  # str(datetime.datetime.now())) #update.message.text)
 
 
 echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
 dispatcher.add_handler(echo_handler)
 
-
-def daily_suggestion(context: CallbackContext, update):
-    for user in users_list:
-        message = random.choice(contents_split).strip()
-        context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+a = 9191991919191991919191919
 
 
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6, 7), time=datetime.time(hour=12, minute=22, second=00)) # -2 hours
+def daily_suggestion(context: CallbackContext):
+    # for user in users_list:
+    message = random.choice(contents_split).strip()
+    context.bot.send_message(chat_id=a, text=message)
 
-job_daily_handler = CommandHandler('job_daily', job_daily)
-dispatcher.add_handler(job_daily)
+
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6, 7), time=datetime.time(hour=12, minute=27, second=00)) # -2 hours
