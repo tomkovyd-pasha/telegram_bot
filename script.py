@@ -11,7 +11,7 @@ contents_split = file_contents.split('.')
 
 a_file.close()
 # contents_split = all_foresights.split('.')
-users_list = {"@pasha1561" : '915489577', "@ira_hrdv" : 9191991919191991919191919}
+users_list = {"@pasha1561" : '915489577'}
 # users_list = ['@pasha1561', '@ira_hrdv']
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
@@ -32,13 +32,20 @@ updater.start_polling()
 
 
 def echo(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text=str(update.effective_chat.id) + str(datetime.datetime.now()))  # str(datetime.datetime.now())) #update.message.text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=str(update.effective_chat.id) + ' ' +str(datetime.datetime.now()))  # str(datetime.datetime.now())) #update.message.text)
 
 
 echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
 dispatcher.add_handler(echo_handler)
 
-a = 9191991919191991919191919
+
+def once(context: CallbackContext):
+    for user in users_list.values():
+        message = random.choice(contents_split).strip()
+        context.bot.send_message(chat_id=user, text=message)
+
+
+j.run_once(once, 2)
 
 
 def daily_suggestion(context: CallbackContext):
