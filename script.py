@@ -40,9 +40,11 @@ dispatcher.add_handler(echo_handler)
 
 
 def once(context: CallbackContext):
-    for user in users_list.values():
-        message = random.choice(contents_split).strip()
-        context.bot.send_message(chat_id=user, text=message)
+    message = random.choice(contents_split).strip()
+    context.bot.send_message(chat_id=915489577, text=message)
+    # for user in users_list.values():
+    #     message = random.choice(contents_split).strip()
+    #     context.bot.send_message(chat_id=user, text=message)
 
 
 j.run_once(once, 2)
