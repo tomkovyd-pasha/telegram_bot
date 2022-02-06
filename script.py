@@ -32,8 +32,8 @@ updater.start_polling()
 
 
 def echo(update, context):
-    #for user in users_list:
-    context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)  #str(datetime.datetime.now())) #update.message.text)
+    # for user in users_list:
+    context.bot.send_message(chat_id=update.effective_chat.id, text=update.message.text)  # str(datetime.datetime.now())) #update.message.text)
 
 
 echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
@@ -46,4 +46,7 @@ def daily_suggestion(context: CallbackContext, update):
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=12, minute=22, second=00)) # -2 hours
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6, 7), time=datetime.time(hour=12, minute=22, second=00)) # -2 hours
+
+job_daily_handler = CommandHandler('job_daily', job_daily)
+dispatcher.add_handler(job_daily)
