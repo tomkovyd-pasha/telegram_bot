@@ -10,7 +10,7 @@ file_contents = a_file.read()
 contents_split = file_contents.split('.')
 
 a_file.close()
-users_list = {"@pasha1561" : 915489577, '@ura' : 1316194498}
+users_list = {"@pasha1561": 915489577} #, '@ura' : 1316194498}
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
 dispatcher = updater.dispatcher
@@ -55,8 +55,11 @@ while 1 == 1:
             context.bot.send_message(chat_id=user, text=message)
 
 
-    daily_suggestion(context_)
+    if datetime.datetime.now().hour == 22 and datetime.datetime.now().minute in (42, 43, 44):
+        daily_suggestion(context_)
+        time.sleep(60)
+
     # job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=21, minute=52, second=00)) # -2 hours
 
-    time.sleep(20)
-    #time.sleep(86400)
+    # time.sleep(20)
+    # time.sleep(86400)
