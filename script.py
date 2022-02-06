@@ -3,16 +3,14 @@ from telegram.ext import Updater, CommandHandler, Filters, MessageHandler, Callb
 import logging
 import random
 import datetime
-
+import time
 
 a_file = open("foresights.txt", encoding='UTF-8')
 file_contents = a_file.read()
 contents_split = file_contents.split('.')
 
 a_file.close()
-# contents_split = all_foresights.split('.')
-users_list = {"@pasha1561" : '915489577'}
-# users_list = ['@pasha1561', '@ira_hrdv']
+users_list = {"@pasha1561" : 915489577, '@ura' : 1316194498}
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
 dispatcher = updater.dispatcher
@@ -39,21 +37,26 @@ echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)
 dispatcher.add_handler(echo_handler)
 
 
-def once(context: CallbackContext):
-    message = random.choice(contents_split).strip()
-    context.bot.send_message(chat_id=915489577, text=message)
-    # for user in users_list.values():
+while 1 == 1:
+    # def once(context: CallbackContext):
     #     message = random.choice(contents_split).strip()
-    #     context.bot.send_message(chat_id=user, text=message)
+    #     context.bot.send_message(chat_id=915489577, text=message)
+    #     # for user in users_list.values():
+    #     #     message = random.choice(contents_split).strip()
+    #     #     context.bot.send_message(chat_id=user, text=message)
+    #
+    #
+    # j.run_once(once, 2)
+    context_ = CallbackContext(dispatcher)
+
+    def daily_suggestion(context: CallbackContext):
+        for user in users_list.values():
+            message = random.choice(contents_split).strip()
+            context.bot.send_message(chat_id=user, text=message)
 
 
-j.run_once(once, 2)
+    daily_suggestion(context_)
+    # job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=21, minute=52, second=00)) # -2 hours
 
-
-def daily_suggestion(context: CallbackContext):
-    for user in users_list.values():
-        message = random.choice(contents_split).strip()
-        context.bot.send_message(chat_id=user, text=message)
-
-
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=13, minute=43, second=00)) # -2 hours
+    time.sleep(20)
+    #time.sleep(86400)
