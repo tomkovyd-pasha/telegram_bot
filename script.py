@@ -21,13 +21,13 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 j = updater.job_queue
 
 
-def start(update, context):
-    message = random.choice(contents_split).strip()
-    context.bot.send_message(chat_id=update.effective_chat.id, text=message)
+# def start(update, context):
+#     message = random.choice(contents_split).strip()
+#     context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
-start_handler = CommandHandler('start', start)
-dispatcher.add_handler(start_handler)
+# start_handler = CommandHandler('start', start)
+# dispatcher.add_handler(start_handler)
 updater.start_polling()
 
 
@@ -46,4 +46,4 @@ def daily_suggestion(context: CallbackContext, update):
         context.bot.send_message(chat_id=update.effective_chat.id, text=message)
 
 
-job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=12, minute=17, second=00)) # -2 hours
+job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=12, minute=22, second=00)) # -2 hours
