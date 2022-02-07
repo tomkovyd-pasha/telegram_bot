@@ -10,7 +10,7 @@ file_contents = a_file.read()
 contents_split = file_contents.split('.')
 
 a_file.close()
-users_list = {"@pasha1561": 915489577, '@ira_hrdv': 455735498, '@ura': 1316194498, '@anastasia_preveda': 807119959, '@iryna_volodymyrivna': 651780710}
+users_list = {"@pasha1561": 915489577, '@ira_hrdv': 455735498, '@ura': 1316194498, '@anastasia_preveda': 807119959, '@iryna_volodymyrivna': 651780710, '@tanya': 818234057}
 
 updater = Updater(token='5200494282:AAFtQ8PJM3Tm7jxgMpd4x1KHYGU-3UafZ0s', use_context=True)
 dispatcher = updater.dispatcher
