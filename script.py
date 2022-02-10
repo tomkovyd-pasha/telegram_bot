@@ -51,9 +51,11 @@ while 1 == 1:
 
     def daily_suggestion(context: CallbackContext):
         for user in users_list.values():
-            # message = ""
-            # if datetime.date(2022, 2, 10) == datetime.date.today():
-            #     if user == 455735498:
+            if datetime.date(2022, 2, 10) == datetime.date.today():
+                if user == 915489577:
+                    message = 'Бот заїбав \n І передбачення: \n ' + random.choice(contents_split).strip()
+                    context.bot.send_message(chat_id=user, text=message)
+            #     elif user == 455735498:
             #         message = 'Іра, дивимось сьогодні гру престолів) \n І передбачення: \n ' + random.choice(contents_split).strip()
             #     elif user == 1316194498:
             #         message = 'Юра, маєш файну шкодовку) \n І передбачення: \n ' + random.choice(contents_split).strip()
@@ -67,11 +69,11 @@ while 1 == 1:
             #         message = 'Дмитре, ніхуя собі блять маєш вихідний) \n І передбачення: \n ' + random.choice(contents_split).strip()
             # else:
             #     message = random.choice(contents_split).strip()
-            message = random.choice(contents_split).strip()
-            context.bot.send_message(chat_id=user, text=message)
+            # message = random.choice(contents_split).strip()
+            # context.bot.send_message(chat_id=user, text=message)
 
 
-    if datetime.datetime.now().hour == 9 and datetime.datetime.now().minute == 1:
+    if datetime.datetime.now().hour == 9 and datetime.datetime.now().minute == 59:
         daily_suggestion(context_)
         time.sleep(86300)
 
