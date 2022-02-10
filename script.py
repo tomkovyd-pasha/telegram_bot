@@ -30,7 +30,7 @@ updater.start_polling()
 
 
 def echo(update, context):
-    context.bot.send_message(chat_id=update.effective_chat.id, text=str(update.effective_chat.id) + ' ' +str(datetime.datetime.now()))  # str(datetime.datetime.now())) #update.message.text)
+    context.bot.send_message(chat_id=update.effective_chat.id, text=str(update.effective_chat.id) + ' \n ' + str(datetime.datetime.now()))  # str(datetime.datetime.now())) #update.message.text)
 
 
 echo_handler = MessageHandler(Filters.text & (~Filters.command), echo)

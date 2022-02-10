@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\aa.py">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\script.py">
           <value>
             <Attribute>
