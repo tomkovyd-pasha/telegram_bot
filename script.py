@@ -57,8 +57,9 @@ while 1 == 1:
                     context.bot.send_message(chat_id=user, text=message)
             #     elif user == 455735498:
             #         message = 'Іра, дивимось сьогодні гру престолів) \n І передбачення: \n ' + random.choice(contents_split).strip()
-            #     elif user == 1316194498:
-            #         message = 'Юра, маєш файну шкодовку) \n І передбачення: \n ' + random.choice(contents_split).strip()
+                elif user == 1316194498:
+                    message = 'Юра, маєш файну шкодовку) \n І передбачення: \n ' + random.choice(contents_split).strip()
+                    context.bot.send_message(chat_id=user, text=message)
             #     elif user == 807119959:
             #         message = 'Настя, ти купила свічки? \n І передбачення: \n ' + random.choice(contents_split).strip()
             #     elif user == 651780710:
@@ -73,7 +74,7 @@ while 1 == 1:
             # context.bot.send_message(chat_id=user, text=message)
 
 
-    if datetime.datetime.now().hour == 9 and datetime.datetime.now().minute == 59:
+    if datetime.datetime.now().hour == 10 and datetime.datetime.now().minute == 4:
         daily_suggestion(context_)
         time.sleep(86300)
 
