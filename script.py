@@ -51,27 +51,27 @@ while 1 == 1:
 
     def daily_suggestion(context: CallbackContext):
         for user in users_list.values():
-            message = ""
-            if datetime.date(2022, 2, 10) == datetime.date.today():
-                if user == 455735498:
-                    message = 'Іра, дивимось сьогодні гру престолів) \n І передбачення: \n ' + random.choice(contents_split).strip()
-                elif user == 1316194498:
-                    message = 'Юра, маєш файну шкодовку) \n І передбачення: \n ' + random.choice(contents_split).strip()
-                elif user == 807119959:
-                    message = 'Настя, ти купила свічки? \n І передбачення: \n ' + random.choice(contents_split).strip()
-                elif user == 651780710:
-                    message = 'Іра, не переживай, в тебе все вийде) \n І передбачення: \n ' + random.choice(contents_split).strip()
-                elif user == 818234057:
-                    message = 'Єржан, вставай) \n І передбачення: \n ' + random.choice(contents_split).strip()
-                elif user == 519468181:
-                    message = 'Дмитре, ніхуя собі блять маєш вихідний) \n І передбачення: \n ' + random.choice(contents_split).strip()
-            else:
-                message = random.choice(contents_split).strip()
-
+            # message = ""
+            # if datetime.date(2022, 2, 10) == datetime.date.today():
+            #     if user == 455735498:
+            #         message = 'Іра, дивимось сьогодні гру престолів) \n І передбачення: \n ' + random.choice(contents_split).strip()
+            #     elif user == 1316194498:
+            #         message = 'Юра, маєш файну шкодовку) \n І передбачення: \n ' + random.choice(contents_split).strip()
+            #     elif user == 807119959:
+            #         message = 'Настя, ти купила свічки? \n І передбачення: \n ' + random.choice(contents_split).strip()
+            #     elif user == 651780710:
+            #         message = 'Іра, не переживай, в тебе все вийде) \n І передбачення: \n ' + random.choice(contents_split).strip()
+            #     elif user == 818234057:
+            #         message = 'Єржан, вставай) \n І передбачення: \n ' + random.choice(contents_split).strip()
+            #     elif user == 519468181:
+            #         message = 'Дмитре, ніхуя собі блять маєш вихідний) \n І передбачення: \n ' + random.choice(contents_split).strip()
+            # else:
+            #     message = random.choice(contents_split).strip()
+            message = random.choice(contents_split).strip()
             context.bot.send_message(chat_id=user, text=message)
 
 
-    if datetime.datetime.now().hour == 8 and datetime.datetime.now().minute == 0:
+    if datetime.datetime.now().hour == 9 and datetime.datetime.now().minute == 1:
         daily_suggestion(context_)
         time.sleep(86300)
 
