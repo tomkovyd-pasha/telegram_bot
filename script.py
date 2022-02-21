@@ -82,12 +82,12 @@ while 1 == 1:
             # else:
             #     message = random.choice(contents_split).strip()
             message = random.choice(contents_split).strip()
-            context.bot.send_message(chat_id=user, text=message)
+            context.bot.send_message(chat_id=user, text=message + '\n Гарного Вам дня')
 
 
-    if datetime.datetime.now().hour == 8 and datetime.datetime.now().minute == 0:
+    if datetime.datetime.now().hour == 9 and datetime.datetime.now().minute == 55:
         daily_suggestion(context_)
-        time.sleep(86300)
+        time.sleep(120)
 
     # job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=21, minute=52, second=00)) # -2 hours
 
