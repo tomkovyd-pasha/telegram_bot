@@ -82,7 +82,7 @@ while 1 == 1:
             # else:
             #     message = random.choice(contents_split).strip()
             message = random.choice(contents_split).strip()
-            context.bot.send_message(chat_id=user, text=message + '\n Гарного Вам дня')
+            context.bot.send_message(chat_id=user, text=message)
 
 
     if datetime.datetime.now().hour == 8 and datetime.datetime.now().minute == 00:
