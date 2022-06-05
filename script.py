@@ -12,14 +12,14 @@ contents_split = file_contents.split('.')
 a_file.close()
 users_list = {
     "@pasha1561": 915489577
-    , '@ira_hrdv': 455735498
-    , '@ura': 1316194498
-    , '@anastasia_preveda': 807119959
-    , '@iryna_volodymyrivna': 651780710
-    , '@tanya': 818234057
-    , '@dmytro': 519468181
-    , '@ira_nasti': 812350065
-    , '@solomiya': 1179292720
+    # , '@ira_hrdv': 455735498
+    # , '@ura': 1316194498
+    # , '@anastasia_preveda': 807119959
+    # , '@iryna_volodymyrivna': 651780710
+    # , '@tanya': 818234057
+    # , '@dmytro': 519468181
+    # , '@ira_nasti': 812350065
+    # , '@solomiya': 1179292720
 }
 
 
@@ -85,7 +85,7 @@ while 1 == 1:
             context.bot.send_message(chat_id=user, text=message)
 
 
-    if datetime.datetime.now().hour == 21 and datetime.datetime.now().minute == 58:
+    if datetime.datetime.now().hour == 21 and datetime.datetime.now().minute == 00:
         daily_suggestion(context_)
         time.sleep(120)
 
