@@ -85,7 +85,7 @@ while 1 == 1:
             context.bot.send_message(chat_id=user, text=message)
 
 
-    if datetime.datetime.now().hour == 8 and datetime.datetime.now().minute == 00:
+    if datetime.datetime.now().hour == 21 and datetime.datetime.now().minute == 58:
         daily_suggestion(context_)
         time.sleep(120)
 
