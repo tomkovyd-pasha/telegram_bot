@@ -17,6 +17,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\cities.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\loadfromexcel.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\script.py">
           <value>
             <Attribute>

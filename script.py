@@ -20,6 +20,7 @@ users_list = {
     , '@dmytro': 519468181
     , '@ira_nasti': 812350065
     , '@solomiya': 1179292720
+    , '@ira_sestra': 1152054114
 }
 
 
