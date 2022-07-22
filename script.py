@@ -88,7 +88,7 @@ while 1 == 1:
 
     if datetime.datetime.now().hour == 7 and datetime.datetime.now().minute == 00:
         daily_suggestion(context_)
-        time.sleep(120)
+        time.sleep(4000)
 
     # job_daily = j.run_daily(daily_suggestion, days=(0, 1, 2, 3, 4, 5, 6), time=datetime.time(hour=21, minute=52, second=00)) # -2 hours
 
